@@ -2,10 +2,11 @@
    
   /*
   Plugin Name: jQuery lazy load plugin
-  Plugin URI: 
+  Plugin URI: http://github.com/ayn/wp-jquery-lazy-load/
+  Description: a quick and dirty wordpress plugin to enable image lazy loading.
   Version: v0.1
-  Author: <a href="http://blog.andrewng.com/">Andrew Ng</a>
-  Description: 
+  Author: Andrew Ng
+  Author URI: http://blog.andrewng.com
   */
 
 function jquery_lazy_load_headers() {
