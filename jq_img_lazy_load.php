@@ -9,7 +9,7 @@
   */
 
 function jquery_lazy_load_headers() {
-  $plugin_path = plugins_url('/jq-lazy-load/');
+  $plugin_path = plugins_url('/wp-jquery-lazy-load/');
   $lazy_url = $plugin_path . 'javascripts/jquery.lazyload.pack.js';
   $jq_url = $plugin_path . 'javascripts/jquery.js';
   wp_deregister_script('jquery');
@@ -18,7 +18,7 @@ function jquery_lazy_load_headers() {
 }
 
 function jquery_lazy_load_ready() {
-  $placeholdergif = plugins_url('/jq-lazy-load/images/grey.gif');
+  $placeholdergif = plugins_url('/wp-jquery-lazy-load/images/grey.gif');
   echo <<<EOF
 <script type="text/javascript">
 $(document).ready(function($){
