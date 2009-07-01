@@ -1,9 +1,9 @@
 === jQuery Image Lazy Load WP ===
 Contributors: ayn
 Tags: images, jquery, javascript, optimization
-Requires at least: 2.0
-Tested up to: 2.7.x
-Stable tag: 0.3
+Requires at least: 2.8
+Tested up to: 2.8.x
+Stable tag: 0.4
 
 add jquery lazy loading to images
 

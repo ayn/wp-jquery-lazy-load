@@ -4,13 +4,13 @@
   Plugin Name: jQuery lazy load plugin
   Plugin URI: http://github.com/ayn/wp-jquery-lazy-load/
   Description: a quick and dirty wordpress plugin to enable image lazy loading.
-  Version: v0.3
+  Version: v0.4
   Author: Andrew Ng
   Author URI: http://blog.andrewng.com
   */
 
 function jquery_lazy_load_headers() {
-  $plugin_path = plugins_url('/wp-jquery-lazy-load/');
+  $plugin_path = plugins_url('/', __FILE__);
   $lazy_url = $plugin_path . 'javascripts/jquery.lazyload.pack.js';
   $jq_url = $plugin_path . 'javascripts/jquery.js';
   wp_deregister_script('jquery');
@@ -19,7 +19,7 @@ function jquery_lazy_load_headers() {
 }
 
 function jquery_lazy_load_ready() {
-  $placeholdergif = plugins_url('/wp-jquery-lazy-load/images/grey.gif');
+  $placeholdergif = plugins_url('images/grey.gif', __FILE__);
   echo <<<EOF
 <script type="text/javascript">
 $(document).ready(function($){
