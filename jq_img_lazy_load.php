@@ -10,7 +10,7 @@
   */
 
 function jquery_lazy_load_headers() {
-  $plugin_path = plugins_url('', __FILE__);
+  $plugin_path = plugins_url('/', __FILE__);
   $lazy_url = $plugin_path . 'javascripts/jquery.lazyload.pack.js';
   $jq_url = $plugin_path . 'javascripts/jquery.js';
   wp_deregister_script('jquery');
