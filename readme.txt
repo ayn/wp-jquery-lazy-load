@@ -18,4 +18,3 @@ unzip archive to wp-content/plugins directory, and activate it in Plugins page i
 or you can cd into your wordpress_root/wp-contents/plugins and do:
 
 git clone git://github.com/ayn/wp-jquery-lazy-load.git
-
