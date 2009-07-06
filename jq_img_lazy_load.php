@@ -22,8 +22,8 @@ function jquery_lazy_load_ready() {
   $placeholdergif = plugins_url('images/grey.gif', __FILE__);
   echo <<<EOF
 <script type="text/javascript">
-$(document).ready(function($){
-  $("img").lazyload({
+jQuery(document).ready(function($){
+  jQuery("img").lazyload({
     effect:"fadeIn",
     placeholder: "$placeholdergif"
   });
