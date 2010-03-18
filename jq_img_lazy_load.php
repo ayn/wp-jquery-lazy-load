@@ -11,11 +11,11 @@
 
 function jquery_lazy_load_headers() {
   $plugin_path = plugins_url('/', __FILE__);
-  $lazy_url = $plugin_path . 'javascripts/jquery.lazyload.pack.js';
-  $jq_url = $plugin_path . 'javascripts/jquery.js';
+  $lazy_url = $plugin_path . 'javascripts/jquery.lazyload.mini.js';
+  $jq_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js';
   wp_deregister_script('jquery');
-  wp_enqueue_script('jquery', $jq_url, false, '1.3.2');
-  wp_enqueue_script('jquerylazyload', $lazy_url, 'jquery', '1.4.0');
+  wp_enqueue_script('jquery', $jq_url, false, '1.4.2');
+  wp_enqueue_script('jquerylazyload', $lazy_url, 'jquery', '1.5.0');
 }
 
 function jquery_lazy_load_ready() {
