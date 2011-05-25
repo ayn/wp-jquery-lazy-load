@@ -24,7 +24,7 @@ function jquery_lazy_load_ready() {
 <script type="text/javascript">
 jQuery(document).ready(function($){
   if (navigator.platform == "iPad") return;
-  jQuery("#content .post").not(".cycle").find("img").lazyload({
+  jQuery("#content .post img").not(".cycle img").find("img").lazyload({
     effect:"fadeIn",
     placeholder: "$placeholdergif"
   });
