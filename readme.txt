@@ -3,7 +3,7 @@ Contributors: ayn
 Tags: images, jquery, javascript, optimization
 Requires at least: 2.8
 Tested up to: 2.9.2
-Stable tag: 0.10
+Stable tag: 0.11
 
 add jquery lazy loading to images
 
