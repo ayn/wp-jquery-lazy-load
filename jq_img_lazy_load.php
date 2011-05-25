@@ -4,7 +4,7 @@
   Plugin Name: jQuery lazy load plugin
   Plugin URI: http://github.com/ayn/wp-jquery-lazy-load/
   Description: a quick and dirty wordpress plugin to enable image lazy loading.
-  Version: v0.11
+  Version: v0.12
   Author: Andrew Ng
   Author URI: http://blog.andrewng.com
   */
@@ -24,7 +24,7 @@ function jquery_lazy_load_ready() {
 <script type="text/javascript">
 jQuery(document).ready(function($){
   if (navigator.platform == "iPad") return;
-  jQuery("#content .post img").not(".cycle img").find("img").lazyload({
+  jQuery(".post img").not(".cycle img").lazyload({
     effect:"fadeIn",
     placeholder: "$placeholdergif"
   });
