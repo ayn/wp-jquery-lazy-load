@@ -13,10 +13,20 @@ class jQueryLazyLoad {
 	var $do_footer = false;
 
 	function __construct() {
+		add_action('wp_head', array($this, 'action_header'));
 		add_action('wp_enqueue_scripts', array($this, 'action_enqueue_scripts'));
 		add_filter('the_content', array($this, 'filter_the_content'));
 		add_filter('wp_get_attachment_link', array($this, 'filter_the_content'));
-		add_action('wp_footer', array($this, 'action_footer'), 15);
+		add_action('wp_footer', array($this, 'action_footer'));
+	}
+
+	function action_header() {
+		echo <<<EOF
+<style type='text/css'>
+img.lazy { display: none; }
+</style>
+
+EOF;
 	}
 
 	function action_enqueue_scripts() {
@@ -64,6 +74,7 @@ class jQueryLazyLoad {
   $("img.lazy").show().lazyload({effect: "fadeIn"});
 })(jQuery);
 </script>
+
 EOF;
 	}
 }
