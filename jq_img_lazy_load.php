@@ -39,6 +39,7 @@ EOF;
 	}
 
 	function filter_the_content($content) {
+		if (is_feed()) return $content;
 		return preg_replace_callback('/(<\s*img[^>]+)(src\s*=\s*"[^"]+")([^>]+>)/i', array($this, 'preg_replace_callback'), $content);
 	}
 
