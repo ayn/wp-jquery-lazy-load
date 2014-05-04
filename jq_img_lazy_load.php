@@ -17,7 +17,7 @@ class jQueryLazyLoad {
 		add_action('wp_enqueue_scripts', array($this, 'action_enqueue_scripts'));
 		add_filter('the_content', array($this, 'filter_the_content'));
 		add_filter('wp_get_attachment_link', array($this, 'filter_the_content'));
-		add_action('wp_footer', array($this, 'action_footer'));
+		add_action('wp_footer', array($this, 'action_footer'), 100);
 	}
 
 	function action_header() {
