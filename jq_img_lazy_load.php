@@ -51,6 +51,7 @@ EOF;
 		//   - add empty class attribute if no existing class attribute
 		//   - set src to placeholder image
 		//   - add back original src attribute, but rename it to "data-original"
+		$class_attr = '';
 		if (!preg_match('/class\s*=\s*"/i', $matches[0])) {
 			$class_attr = 'class="" ';
 		}
