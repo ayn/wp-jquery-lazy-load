@@ -1,0 +1,18 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['5.6', '7.4', '8.5']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: PHP syntax
+        run: docker run --rm -v "$GITHUB_WORKSPACE:/plugin:ro" -w /plugin php:${{ matrix.php }}-cli php -l jq_img_lazy_load.php
+      - name: Regression tests
+        run: docker run --rm -v "$GITHUB_WORKSPACE:/plugin:ro" -w /plugin php:${{ matrix.php }}-cli php tests/smoke.php
