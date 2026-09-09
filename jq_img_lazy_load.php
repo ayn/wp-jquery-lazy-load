@@ -9,6 +9,8 @@ defined( 'ABSPATH' ) || exit;
   Version: 0.22.0
   Requires at least: 2.8
   Author: Andrew Ng
+  License: GPLv2 or later
+  License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Author URI: http://blog.andrewng.com
   */
 

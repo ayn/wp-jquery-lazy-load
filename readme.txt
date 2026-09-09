@@ -1,5 +1,7 @@
 === jQuery Image Lazy Load WP ===
-Contributors: ayn, jtai
+Contributors: ayn
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: images, jquery, optimization
 Requires at least: 2.8
 Stable tag: 0.22.0
