@@ -1,10 +1,13 @@
 <?php
+
+defined( 'ABSPATH' ) || exit;
    
   /*
   Plugin Name: jQuery lazy load plugin
   Plugin URI: http://github.com/ayn/wp-jquery-lazy-load/
-  Description: a quick and dirty wordpress plugin to enable image lazy loading.
-  Version: v0.21
+  Description: Legacy image lazy loading for WordPress below 5.5. Retired on newer versions, which provide native lazy loading.
+  Version: 0.22.0
+  Requires at least: 2.8
   Author: Andrew Ng
   Author URI: http://blog.andrewng.com
   */
@@ -13,11 +16,25 @@ class jQueryLazyLoad {
 	var $do_footer = false;
 
 	function __construct() {
+		global $wp_version;
+
+		// Core owns image loading on WordPress 5.5 and newer.
+		if ( version_compare( $wp_version, '5.5', '>=' ) ) {
+			add_action( 'admin_notices', array( $this, 'retirement_notice' ) );
+			return;
+		}
 		add_action('wp_head', array($this, 'action_header'));
 		add_action('wp_enqueue_scripts', array($this, 'action_enqueue_scripts'));
 		add_filter('the_content', array($this, 'filter_the_content'));
 		add_filter('wp_get_attachment_link', array($this, 'filter_the_content'));
 		add_action('wp_footer', array($this, 'action_footer'), 100);
+	}
+
+	function retirement_notice() {
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
+		echo '<div class="notice notice-info"><p>' . esc_html( __( 'jQuery Image Lazy Load is retired. WordPress 5.5 and newer provide native image lazy loading. You can deactivate and delete this plugin from the Plugins screen.', 'jquery-image-lazy-loading' ) ) . '</p></div>';
 	}
 
 	function action_header() {
@@ -51,6 +68,7 @@ EOF;
 		//   - add empty class attribute if no existing class attribute
 		//   - set src to placeholder image
 		//   - add back original src attribute, but rename it to "data-original"
+		$class_attr = '';
 		if (!preg_match('/class\s*=\s*"/i', $matches[0])) {
 			$class_attr = 'class="" ';
 		}
@@ -81,5 +99,3 @@ EOF;
 }
 
 new jQueryLazyLoad();
-
-?>
