@@ -15,4 +15,4 @@
 
 ## Earlier releases
 
-The full historical changelog, including original commit messages, remains in the [Git commit history](https://github.com/ayn/wp-jquery-lazy-load/commits/master/).
+The full historical changelog, including original commit messages, remains in the [Git commit history](https://github.com/ayn/wp-jquery-lazy-load/commits/main/).

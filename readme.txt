@@ -39,7 +39,7 @@ After upgrading or deactivating, clear your page cache to remove any cached plac
 
 = Earlier releases =
 
-See the [complete commit history](https://github.com/ayn/wp-jquery-lazy-load/commits/master/).
+See the [complete commit history](https://github.com/ayn/wp-jquery-lazy-load/commits/main/).
 
 == Upgrade Notice ==
 
